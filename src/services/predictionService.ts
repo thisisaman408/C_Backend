@@ -1,10 +1,10 @@
 import { spawn } from 'child_process';
 import path from 'path';
-
+const pythonScriptPath = path.resolve(__dirname, '../../predict.py'); 
 export async function getPrediction(inputs: any): Promise<number> {
   return new Promise((resolve, reject) => {
     const pythonProcess = spawn('python3', [
-      path.join(__dirname, '../../predict.py'),
+      pythonScriptPath,
       JSON.stringify(inputs)
     ]);
 
@@ -22,7 +22,7 @@ export async function getPrediction(inputs: any): Promise<number> {
     pythonProcess.on('close', (code) => {
       if (code === 0) {
         try {
-          const result = JSON.parse(output);
+          const result = JSON.parse(output)
           resolve(result.prediction);
         } catch (err) {
           reject(new Error('Failed to parse prediction output: ' + output));
