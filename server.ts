@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-  origin: 'https://c-ui.vercel.app/',
+  origin: 'https://c-ui.vercel.app',
   methods: ['GET', 'POST'], 
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
