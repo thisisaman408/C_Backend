@@ -3,9 +3,9 @@ import path from 'path';
 
 export async function getPrediction(inputs: any): Promise<number> {
   return new Promise((resolve, reject) => {
-    const pythonScriptPath = path.resolve(__dirname, '../../dist/predict.py'); // Updated path
+    const pythonScriptPath = path.resolve(__dirname, '../../predict.py'); // Updated path
 
-    console.log("Using Python script at:", pythonScriptPath); // Add loggi
+    console.log("Using Python script at:", pythonScriptPath); // Add loggi 
     const pythonProcess = spawn('python3', [
       pythonScriptPath,
       JSON.stringify(inputs)
