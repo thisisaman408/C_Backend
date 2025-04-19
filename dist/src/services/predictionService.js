@@ -18,8 +18,8 @@ const path_1 = __importDefault(require("path"));
 function getPrediction(inputs) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
-            const pythonScriptPath = path_1.default.resolve(__dirname, '../../dist/predict.py'); // Updated path
-            console.log("Using Python script at:", pythonScriptPath); // Add loggi
+            const pythonScriptPath = path_1.default.resolve(__dirname, '../../predict.py'); // Updated path
+            console.log("Using Python script at:", pythonScriptPath); // Add loggi 
             const pythonProcess = (0, child_process_1.spawn)('python3', [
                 pythonScriptPath,
                 JSON.stringify(inputs)

@@ -6,7 +6,8 @@
     "scripts": {
       "start": "node dist/server.js",
       "build": "tsc",
-      "postbuild": "cp predict.py dist/",
+      "postbuild": "cp predict.py dist/ && cp requirements.txt dist/",
+      "postinstall": "pip install -r dist/requirements.txt",
       "dev": "nodemon --exec ts-node server.ts",
       "lint": "eslint '*.{ts,tsx}' --fix",
       "test": "echo \"Error: no test specified\" && exit 1"
